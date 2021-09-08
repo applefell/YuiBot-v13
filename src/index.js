@@ -1,8 +1,14 @@
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
-const { token } = require('./config.json');
+const { token, mongoPass } = require('./config.json');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+
+client.mongoose = require('mongoose');
+client.mongoose.connect(mongoPass, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -28,7 +34,7 @@ client.on('interactionCreate', async interaction => {
     if (!command) return;
 
     try {
-        await command.execute(interaction);
+        await command.execute(interaction, client);
     } catch (error) {
         console.error(error);
         await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
