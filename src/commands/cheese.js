@@ -16,6 +16,6 @@ module.exports = {
                 .setTimestamp()
                 .setImage(img);
     
-            interaction.reply({ embeds: [embed] });
+        interaction.reply({ embeds: [embed] });
     },
 };

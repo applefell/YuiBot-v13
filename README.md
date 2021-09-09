@@ -4,7 +4,7 @@
  # WIP
  Just started working on this not too long ago. Should be pretty much the same thing as my other repository, YuiBot-Rebuild, but eventually will take over as the main repository for work on my bot.
  
- # Goals
+ # [Goals](https://github.com/applefell/YuiBot-v13/projects/1)
  - [ ] Add back all of the original commands with some tweaks to make them work as slash commands
  - [ ] Add the ability to still use a prefix instead of just slash commands
  - [ ] Add back the economy and levelling system
