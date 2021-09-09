@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, MessageEmbed } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -9,7 +9,7 @@ module.exports = {
                 .setDescription('User that made you cry.')
                 .setRequired(true)),
     async execute(interaction, client) {
-        const target = user.tag;
+        const target = interaction.options.getMember('user');
         const author = interaction.user.tag;
     },
 };

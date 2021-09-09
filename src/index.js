@@ -5,10 +5,16 @@ const { token, mongoPass } = require('./config.json');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.mongoose = require('mongoose');
+const { shopInit } = require('./models/shopinit');
 client.mongoose.connect(mongoPass, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
+client.Users = require('./models/Users');
+client.Shop = require('./models/Shop');
+client.UserItems = require('./models/Useritems');
+client.UserItems = require('./models/Servers');
+shopInit(client);
 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
