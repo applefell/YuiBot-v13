@@ -20,7 +20,7 @@ module.exports = {
         const embed = new MessageEmbed()
             .setColor('#0000ff')
             .setTimestamp()
-            .setTitle(`${author} made ${user.username} cry.`)
+            .setTitle(`${author} made ${target.username} cry.`)
             .setImage(`${img}`);
 
         interaction.reply({ embeds: [embed] });
