@@ -1,26 +1,26 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { findCry } = require('./extra/cry_switch');
 const { MessageEmbed } = require('discord.js');
+const { findKiss } = require('./extra/kiss_switch');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('cry')
-        .setDescription('Lets you cry!')
+        .setName('kiss')
+        .setDescription('Lets you kiss someone!')
         .addUserOption(user =>
             user.setName('user')
-                .setDescription('User that made you cry.')
+                .setDescription('User that you want to kiss.')
                 .setRequired(true)),
     async execute(interaction, client) {
-        const target = interaction.options.getUser('user');
+        const user = interaction.options.getUser('user');
+        const ran = Math.floor(Math.random() * (7 - 1) + 1);
         const author = interaction.user.username;
-        const ran = Math.floor(Math.random() * (8 - 1) + 1);
 
-        const img = findCry(ran);
+        const img = findKiss(ran);
 
         const embed = new MessageEmbed()
-            .setColor('#0000ff')
+            .setColor('#ffc0cb')
+            .setTitle(`${author} kissed ${user.username}!`)
             .setTimestamp()
-            .setTitle(`${author} made ${user.username} cry.`)
             .setImage(`${img}`);
 
         interaction.reply({ embeds: [embed] });
