@@ -1,0 +1,7 @@
+{
+    "globalPrefix": "[",
+    "token": "token",
+    "mongoPass": "mongodb api",
+    "owner": "owner id",
+    "minLevelXP": 450
+}
