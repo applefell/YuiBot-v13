@@ -1,7 +1,9 @@
 {
     "globalPrefix": "[",
-    "token": "token",
-    "mongoPass": "mongodb api",
+    "token": "Bot token",
+    "mongoPass": "Mongodb key",
     "owner": "owner id",
-    "minLevelXP": 450
+    "minLevelXP": 450,
+    "clientId": "client ID",
+    "guidlId": "guild id for submitting commands"
 }

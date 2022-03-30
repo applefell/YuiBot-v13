@@ -9,8 +9,8 @@
  - [ ] Add the ability to still use a prefix instead of just slash commands
  - [ ] Add back the economy and levelling system
  - [ ] Improved help command
- - [ ] Improved image command, maybe using buttons
+ - [x] Improved image command, maybe using buttons
  - [ ] Moderation features like tempbans
  - [ ] Music commands maybe
  - [ ] Website integration
- - [ ] Sharding support
+ - [x] Sharding support

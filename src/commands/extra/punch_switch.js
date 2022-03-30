@@ -18,3 +18,5 @@ function findPunch(ran) {
 		return 'https://media1.tenor.com/images/0e5afd72b5c5c9b3ba61df8c39c3e590/tenor.gif?itemid=19594599';
     }
 }
+
+module.exports = { findPunch };

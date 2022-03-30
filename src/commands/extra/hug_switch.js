@@ -20,3 +20,5 @@ function findHug(ran) {
         return 'https://media1.tenor.com/images/b77fd0cfd95f89f967be0a5ebb3b6c6a/tenor.gif?itemid=7864716';
     }
 }
+
+module.exports = { findHug };

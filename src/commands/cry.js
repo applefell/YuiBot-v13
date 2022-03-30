@@ -15,6 +15,28 @@ module.exports = {
         const author = interaction.user.username;
         const ran = Math.floor(Math.random() * (8 - 1) + 1);
 
+        client.Users.findOne({
+            user_id: interaction.user.id,
+        }, (err, data) => {
+            if (err) console.error(err);
+            if (!data) {
+                const newData = new client.Users({
+                    user_id: interaction.user.id,
+                    balance: 0,
+                    xp: 0,
+                    level: 0,
+                    xp_cooldown: 900000000,
+                    hugs: 0,
+                    punches: 0,
+                    cries: 1,
+                });
+                newData.save().catch(err => console.error(err));
+            } else if (data) {
+                data.cries += 1;
+                data.save().catch(err => console.error(err));
+            }
+        });
+
         const img = findCry(ran);
 
         const embed = new MessageEmbed()

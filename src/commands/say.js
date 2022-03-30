@@ -8,7 +8,7 @@ module.exports = {
             option.setName('quote')
                 .setDescription('What you want the bot to say.')
                 .setRequired(true)),
-    execute(interaction) {
+    async execute(interaction) {
         const quote = interaction.options.getString('quote');
         interaction.channel.send(`${quote}`);
         return;
