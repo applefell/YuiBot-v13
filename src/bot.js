@@ -14,7 +14,7 @@ client.mongoose.connect(mongoPass, {
 client.Users = require('./models/Users');
 client.Shop = require('./models/Shop');
 client.UserItems = require('./models/Useritems');
-client.UserItems = require('./models/Servers');
+client.Servers = require('./models/Servers');
 shopInit(client);
 
 client.commands = new Collection();

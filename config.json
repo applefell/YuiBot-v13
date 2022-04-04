@@ -5,5 +5,5 @@
     "owner": "owner id",
     "minLevelXP": 450,
     "clientId": "client ID",
-    "guidlId": "guild id for submitting commands"
+    "guildId": "guild id for submitting commands"
 }
