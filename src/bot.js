@@ -1,6 +1,6 @@
 const fs = require('fs');
-const { Client, Collection, Intents } = require('discord.js');
-const { token, mongoPass, minLevelXP, globalPrefix } = require('../config.json');
+const { Client, Intents } = require('discord.js');
+const { token, mongoPass, minLevelXP } = require('../config.json');
 const { cinderellaEmbed, bocchiEmbed, konEmbed, randomEmbed } = require('./commands/extra/image/embeds');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -16,14 +16,6 @@ client.Shop = require('./models/Shop');
 client.UserItems = require('./models/Useritems');
 client.Servers = require('./models/Servers');
 shopInit(client);
-
-client.commands = new Collection();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-
-for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
-    client.commands.set(command.data.name, command);
-}
 
 client.once('ready', () => {
     console.log('Ready!');

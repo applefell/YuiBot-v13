@@ -1,5 +1,4 @@
 {
-    "globalPrefix": "[",
     "token": "Bot token",
     "mongoPass": "Mongodb key",
     "owner": "owner id",

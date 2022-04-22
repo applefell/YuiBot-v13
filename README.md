@@ -6,11 +6,8 @@
  
  # [Goals](https://github.com/applefell/YuiBot-v13/projects/1)
  - [ ] Add back all of the original commands with some tweaks to make them work as slash commands
- - [ ] Add the ability to still use a prefix instead of just slash commands
  - [ ] Add back the economy and levelling system
- - [ ] Improved help command
  - [x] Improved image command, maybe using buttons
- - [ ] Moderation features like tempbans
  - [ ] Music commands maybe
  - [ ] Website integration
  - [x] Sharding support
