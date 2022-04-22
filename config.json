@@ -1,8 +1,8 @@
 {
     "token": "Bot token",
     "mongoPass": "Mongodb key",
-    "owner": "owner id",
+    "owner": "Owner ID",
     "minLevelXP": 450,
-    "clientId": "client ID",
-    "guildId": "guild id for submitting commands"
+    "clientId": "Client ID",
+    "guidId": "Guild ID for submitting commands"
 }

@@ -1,9 +1,18 @@
 const fs = require('fs');
-const { Client, Intents } = require('discord.js');
+const { Client, Collection, Intents } = require('discord.js');
 const { token, mongoPass, minLevelXP } = require('../config.json');
 const { cinderellaEmbed, bocchiEmbed, konEmbed, randomEmbed } = require('./commands/extra/image/embeds');
+const { buyCake, buyCoffee, buyTea } = require('./commands/extra/buy/buys');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+
+client.commands = new Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.data.name, command);
+}
 
 client.mongoose = require('mongoose');
 const { shopInit } = require('./models/shopinit');
@@ -117,14 +126,31 @@ client.on('interactionCreate', async interaction => {
 
     if (interaction.isSelectMenu()) {
         await interaction.deferUpdate();
-        if (interaction.values[0] === 'kon') {
-            konEmbed(interaction);
-        } else if (interaction.values[0] === 'bocchi') {
-            bocchiEmbed(interaction);
-        } else if (interaction.values[0] === 'cinderella') {
-            cinderellaEmbed(interaction);
-        } else if (interaction.values[0] === 'random') {
-            randomEmbed(interaction);
+
+        const value = interaction.values[0];
+
+        switch(value){
+            case "kon":
+                konEmbed(interaction);
+                break;
+            case "bocchi":
+                bocchiEmbed(interaction);
+                break;
+            case "cinderella":
+                cinderellaEmbed(interaction);
+                break;
+            case "random":
+                randomEmbed(interaction);
+                break;
+            case "cake":
+                buyCake(interaction, client);
+                break;
+            case "tea":
+                buyTea(interaction, client);
+                break;
+            case "coffee":
+                buyCoffee(interaction, client);
+                break;
         }
     }
 });
