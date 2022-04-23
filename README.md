@@ -7,7 +7,7 @@
  # [Goals](https://github.com/applefell/YuiBot-v13/projects/1)
  - [x] Add back "all" of the original commands with some tweaks to make them work as slash commands
  - [x] Add back the economy and levelling system
- - [ ] Add a command that displays your level
+ - [x] Add a command that displays your level
  - [x] Improved image command, maybe using buttons
  - [ ] Music commands maybe
  - [ ] Website integration
